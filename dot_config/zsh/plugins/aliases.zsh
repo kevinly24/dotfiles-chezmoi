@@ -33,8 +33,8 @@ alias tarls="tar -tvf"
 alias untar="tar -xf"
 
 # find
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
+# alias fd='find . -type d -name'
+# alias ff='find . -type f -name'
 
 # url encode/decode
 alias urldecode='python3 -c "import sys, urllib.parse as ul; \
@@ -49,3 +49,4 @@ alias zbench='for i in {1..10}; do /usr/bin/time zsh -lic exit; done'
 alias zdot='cd ${ZDOTDIR:-~}'
 
 alias -- 'lg'='lazygit'
+alias source-zsh="source ~/.config/zsh/.zshrc"

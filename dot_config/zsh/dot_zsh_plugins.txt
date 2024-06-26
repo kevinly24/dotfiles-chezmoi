@@ -52,8 +52,6 @@ mattmc3/zephyr path:plugins/completion
 https://github.com/peterhurford/up.zsh
 rummik/zsh-tailf
 mattmc3/zman
-agkozak/zsh-z
-
 
 ### Local Plugins
 #
@@ -61,9 +59,9 @@ agkozak/zsh-z
 # host your own custom plugins.
 #
 ###
-$ZDOTDIR/.aliases
-$ZDOTDIR/plugins/yazi
-$ZDOTDIR/plugins/fzf
+# $ZDOTDIR/.aliases
+# $ZDOTDIR/plugins/yazi
+# $ZDOTDIR/plugins/fzf
 
 ### Local Plugins with Variables
 #
@@ -149,10 +147,13 @@ belak/zsh-utils path:editor
 # certain plugins, this can greatly increase your zsh startup speed.
 #
 ###
-
-# Syntax highlighting
-#zsh-users/zsh-syntax-highlighting kind:defer
 zdharma-continuum/fast-syntax-highlighting kind:defer
+
+### My Plugins
+#
+###
+lincheney/fzf-tab-completion path:zsh
+
 
 
 ### Final Plugins

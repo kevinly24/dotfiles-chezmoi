@@ -1,0 +1,1 @@
+bindkey '^I' fzf_completion

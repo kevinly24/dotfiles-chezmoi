@@ -31,5 +31,10 @@ for FILE in $FILES; do
     source $FILE
 done
 
+ZSHLOCALRC=~/.zshrc.local
+if test -f "$ZSHLOCALRC"; then
+   source "$ZSHLOCALRC"
+fi
+
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"

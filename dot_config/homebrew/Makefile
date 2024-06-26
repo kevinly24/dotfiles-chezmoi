@@ -1,2 +1,2 @@
 install:
-	brew bundle install --file=rs-brew-dump
+	brew bundle install --file=Brewfile

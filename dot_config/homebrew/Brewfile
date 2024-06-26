@@ -33,3 +33,4 @@ brew "neovim"
 # Dev
 brew "lazygit"
 brew "chezmoi"
+brew "mise"

@@ -1,0 +1,13 @@
+[[manager.prepend_keymap]]
+    on   = [ "<C-s>" ]
+    run  = 'shell "$SHELL" --block --confirm'
+    desc = "Open shell here"
+[[manager.prepend_keymap]]
+    on   = [ "b" ]
+    run  = 'shell "bat $0" --block --confirm'
+    desc = "open bat here"
+[[manager.prepend_keymap]]
+    on   = [ "l" ]
+    run  = "plugin --sync smart-enter"
+    desc = "Enter the child directory, or open the file"
+

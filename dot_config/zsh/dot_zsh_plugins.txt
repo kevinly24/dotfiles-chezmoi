@@ -63,6 +63,7 @@ agkozak/zsh-z
 ###
 $ZDOTDIR/.aliases
 $ZDOTDIR/plugins/yazi
+$ZDOTDIR/plugins/fzf
 
 ### Local Plugins with Variables
 #

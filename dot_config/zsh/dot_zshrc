@@ -31,4 +31,5 @@ for FILE in $FILES; do
     source $FILE
 done
 
+eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"

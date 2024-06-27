@@ -50,3 +50,5 @@ alias zdot='cd ${ZDOTDIR:-~}'
 
 alias -- 'lg'='lazygit'
 alias source-zsh="source ~/.config/zsh/.zshrc"
+
+alias cm="chezmoi apply;source-zsh"

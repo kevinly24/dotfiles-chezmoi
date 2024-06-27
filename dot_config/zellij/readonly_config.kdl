@@ -147,6 +147,9 @@ keybinds clear-defaults=true {
 	// MOVE BINDINGS
         bind "m" { SwitchToMode "Move"; }
 
+	// RESIXE BINDINGS
+        bind "r" { SwitchToMode "Resize"; }
+
 	// SCROLL BINDINGS
         bind "s" { SwitchToMode "Scroll"; }
 

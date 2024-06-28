@@ -1,6 +1,6 @@
 # zellij_tab_name_update
-chpwd_functions=(zellij_set_pane_name_chpwd)
-preexec_functions=(zellij_set_pane_name_preexec)
+# chpwd_functions=(zellij_set_pane_name_chpwd)
+# preexec_functions=(zellij_set_pane_name_preexec)
 
 zellij_set_pane_name_preexec() {
     if [[ -z $ZELLIJ ]]; then

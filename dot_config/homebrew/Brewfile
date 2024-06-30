@@ -29,6 +29,8 @@ brew "zoxide"
 brew "lua"
 brew "luajit"
 brew "neovim"
+brew "tmux"
+brew "tmuxinator"
 
 # Dev
 brew "lazygit"

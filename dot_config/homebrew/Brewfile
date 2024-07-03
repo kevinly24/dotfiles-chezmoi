@@ -12,6 +12,7 @@ brew "jq"
 brew "ripgrep"
 brew "unar"
 brew "wget"
+brew "cheat"
 
 # Terminal
 brew "bat"

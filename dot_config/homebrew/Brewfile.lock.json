@@ -1090,6 +1090,50 @@
             }
           }
         }
+      },
+      "cheat": {
+        "version": "4.4.2",
+        "bottle": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "arm64_sonoma": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/cheat/blobs/sha256:6dd5285d4e42b1976c4f0f334801393e2e4773162923cd55452f802321e2f711",
+              "sha256": "6dd5285d4e42b1976c4f0f334801393e2e4773162923cd55452f802321e2f711"
+            },
+            "arm64_ventura": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/cheat/blobs/sha256:9e21ab004b1cb5980cc44bca0f53b15c2faa6eafce6ddc9eca8111686fd1cd7f",
+              "sha256": "9e21ab004b1cb5980cc44bca0f53b15c2faa6eafce6ddc9eca8111686fd1cd7f"
+            },
+            "arm64_monterey": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/cheat/blobs/sha256:1474e66acfad304ccfaac31485a8d157f9f46715abee290f762101012b75edfd",
+              "sha256": "1474e66acfad304ccfaac31485a8d157f9f46715abee290f762101012b75edfd"
+            },
+            "sonoma": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/cheat/blobs/sha256:5ba6469c2d181e3d0003a62b82013a1e062e83fcede817b03c3b0fe396b296fa",
+              "sha256": "5ba6469c2d181e3d0003a62b82013a1e062e83fcede817b03c3b0fe396b296fa"
+            },
+            "ventura": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/cheat/blobs/sha256:bf46ed2b17ac40f8c9fbadb38654b9ed601f825e9256975e0903fbecce3f432f",
+              "sha256": "bf46ed2b17ac40f8c9fbadb38654b9ed601f825e9256975e0903fbecce3f432f"
+            },
+            "monterey": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/cheat/blobs/sha256:72b7aad552bca469ac25da221432e8cf1fdb066082d3b9772f831faf6b7e566d",
+              "sha256": "72b7aad552bca469ac25da221432e8cf1fdb066082d3b9772f831faf6b7e566d"
+            },
+            "x86_64_linux": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/cheat/blobs/sha256:029acbb363f0d93fa5560e631262cff46147940c960283aecb0256ca7919e163",
+              "sha256": "029acbb363f0d93fa5560e631262cff46147940c960283aecb0256ca7919e163"
+            }
+          }
+        }
       }
     },
     "cask": {

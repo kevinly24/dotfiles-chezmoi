@@ -39,3 +39,6 @@ fi
 eval "$(zoxide init zsh)"
 eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
+
+# TODO: remove this or find a better way to support this
+export PATH=$PATH:/Users/kevinnly/.spicetify

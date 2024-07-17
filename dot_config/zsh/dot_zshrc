@@ -3,6 +3,8 @@
 # .zshrc - Zsh file loaded on interactive shell sessions.
 #
 
+# zmodload zsh/zprof used to profile, renable when necessary
+
 # Zsh options.
 setopt extended_glob
 

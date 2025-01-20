@@ -7,8 +7,8 @@
     run  = 'shell "bat $0" --block --confirm'
     desc = "View with bat"
 [[manager.prepend_keymap]]
-    on   = [ "l" ]
-    run  = "plugin --sync smart-enter"
+    on   = "l"
+    run  = "plugin smart-enter"
     desc = "Enter the child directory, or open the file"
 [[manager.prepend_keymap]]
     on   = [ "g", "s" ]

@@ -19,6 +19,9 @@ export EDITOR="${EDITOR:-nvim}"
 export VISUAL="${VISUAL:-nvim}"
 export PAGER="${PAGER:-less}"
 
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="$HOME/.local/share/mise/shims:$PATH"
+
 #
 # Paths
 #
@@ -34,3 +37,5 @@ path=(
   /usr/local/{,s}bin(N)
   $path
 )
+
+eval "$(mise activate zsh --shims)"

@@ -14,3 +14,7 @@
     on   = [ "g", "s" ]
     run  = 'shell "lazygit" --block --confirm'
     desc = "Open lazygit"
+[[manager.prepend_keymap]]
+    desc = "Start bunny.yazi"
+    on = ";"
+    run = "plugin bunny"

@@ -6,7 +6,7 @@ after-startup-command = [
 
 start-at-login = true
 
-enable-normalization-flatten-containers = true
+enable-normalization-flatten-containers = false
 enable-normalization-opposite-orientation-for-nested-containers = false
 
 accordion-padding = 30
@@ -45,6 +45,7 @@ outer.right =      10
 
 alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
+alt-period = 'fullscreen'
 
 alt-h = 'focus --boundaries all-monitors-outer-frame left'
 alt-j = 'focus --boundaries all-monitors-outer-frame down'
@@ -92,7 +93,9 @@ alt-z = 'workspace Z'
 alt-tab = 'workspace-back-and-forth'
 alt-quote = 'mode root'
 alt-enter = 'exec-and-forget wezterm start'
+alt-shift-enter = ['split opposite', 'exec-and-forget wezterm start']
 alt-semicolon = 'exec-and-forget open -a Firefox about:newtab'
+alt-shift-semicolon = ['split opposite', 'exec-and-forget open -a Firefox about:newtab']
 alt-esc = 'close'
 
 [mode.root.binding]
@@ -125,8 +128,15 @@ alt-j = ['join-with down', 'mode main']
 alt-k = ['join-with up', 'mode main']
 alt-l = ['join-with right', 'mode main']
 
-i = 'resize smart -70'
-o = 'resize smart +70'
+i = 'resize smart -400'
+o = 'resize smart +400'
+
+alt-i = 'resize smart -200'
+alt-o = 'resize smart +200'
+
+shift-i = 'resize smart -600'
+shift-o = 'resize smart +600'
+
 
 [mode.move.binding]
 esc = ['reload-config', 'mode main']
@@ -247,10 +257,14 @@ y = ['summon-workspace Y', 'mode main']
 z = ['summon-workspace Z', 'mode main']
 
 
-h = ['move-workspace-to-monitor prev', 'mode main']
-k = ['move-workspace-to-monitor prev', 'mode main']
-j = ['move-workspace-to-monitor next', 'mode main']
-l = ['move-workspace-to-monitor next', 'mode main']
+h = ['move-workspace-to-monitor left', 'mode main']
+j = ['move-workspace-to-monitor down', 'mode main']
+k = ['move-workspace-to-monitor up', 'mode main']
+l = ['move-workspace-to-monitor right', 'mode main']
+shift-h = ['move-workspace-to-monitor left', 'mode main']
+shift-j = ['move-workspace-to-monitor down', 'mode main']
+shift-k = ['move-workspace-to-monitor up', 'mode main']
+shift-l = ['move-workspace-to-monitor right', 'mode main']
 
 [[on-window-detected]]
     if.app-id = 'com.amazon.Amazon-Chime'
@@ -279,3 +293,23 @@ l = ['move-workspace-to-monitor next', 'mode main']
 [[on-window-detected]]
     if.app-id = 'com.microsoft.VSCode'
     run = 'move-node-to-workspace V'
+
+[[on-window-detected]]
+    if.app-id = 'com.automattic.beeper.desktop'
+    run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.MobileSMS'
+    run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
+    if.window-title-regex-substring = 'Picture-in-Picture'
+    run = ['layout floating']
+
+[[on-window-detected]]
+    if.app-id = 'com.quip.Desktop'
+    run = 'move-node-to-workspace Q'
+
+[[on-window-detected]]
+    if.window-title-regex-substring = 'Quip'
+    run = ['move-node-to-workspace Q']

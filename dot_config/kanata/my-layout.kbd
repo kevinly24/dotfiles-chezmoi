@@ -1,0 +1,41 @@
+(defcfg
+  process-unmapped-keys no
+)
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+;; The first layer defined is the layer that will be active by default when
+;; kanata starts up. This layer is the standard QWERTY layout except for the
+;; backtick/grave key (@grl) which is an alias for a tap-hold key.
+(deflayer qwerty
+  esc  brdn brup f3   f4   f5   f6   f7   f8   f9   mute vold volu
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  @␛⌃  a    s    @l⌥  f    g    h    j    @r⌥  l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt @r⌘  rctl
+)
+
+(deflayer right_cmd_layer
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    lrld _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    ←    ↓    ↑    →    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _
+)
+
+(defalias
+  r⌘ (tap-hold-press 200 200 ralt (layer-toggle right_cmd_layer))
+  l⌥ (tap-hold 200 200 d lalt)
+  r⌥ (tap-hold 200 200 k ralt)
+  ␛⌃ (tap-hold-press 200 200 esc lctl)
+)
+

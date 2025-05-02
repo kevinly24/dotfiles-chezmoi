@@ -1,2 +1,2 @@
 # Tasks
-- [ ] add media controls 
+- [x] add media controls 

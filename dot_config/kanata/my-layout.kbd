@@ -15,12 +15,12 @@
 ;; kanata starts up. This layer is the standard QWERTY layout except for the
 ;; backtick/grave key (@grl) which is an alias for a tap-hold key.
 (deflayer qwerty
-  esc  brdn brup f3   f4   f5   f6   f7   f8   f9   mute vold volu
+  esc  brdn brup f3   f4   f5   f6   ◀◀   ▶⏸   ▶▶   mute vold volu
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   @␛⌃  a    s    @l⌥  f    g    h    j    @r⌥  l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt @r⌘  rctl
+  @␛⌃  lmet lalt           spc            ralt @r⌘  rctl
 )
 
 (deflayer right_cmd_layer

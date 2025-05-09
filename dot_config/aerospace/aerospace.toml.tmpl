@@ -95,7 +95,7 @@ alt-rightSquareBracket = 'move-node-to-workspace --focus-follows-window next'
 alt-quote = 'mode root'
 alt-enter = 'exec-and-forget wezterm start'
 alt-shift-enter = ['split opposite', 'exec-and-forget wezterm start']
-alt-semicolon = 'exec-and-forget open -a Firefox https://code.amazon.com/'
+alt-semicolon = 'exec-and-forget open -a Firefox {{ if .work_machine }}https://code.amazon.com/{{ else }}about:newtab{{ end }}'
 alt-esc = 'close'
 
 [mode.root.binding]
@@ -332,6 +332,7 @@ shift-l = ['move-workspace-to-monitor right', 'mode main']
 
 
 {{- if .work_machine }}
+
 # Work related hotkeys
 [[on-window-detected]]
     if.app-id = 'com.quip.Desktop'

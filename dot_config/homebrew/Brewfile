@@ -35,6 +35,7 @@ brew "tmuxinator"
 brew "lazygit"
 brew "chezmoi"
 brew "mise"
+brew "difftastic"
 
 # Casks
 cask "neovide"

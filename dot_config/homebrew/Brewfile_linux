@@ -1,0 +1,3 @@
+# Access X11 clipboards from the command-line
+brew "xclip"
+

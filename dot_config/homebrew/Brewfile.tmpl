@@ -1,0 +1,6 @@
+{{ includeTemplate "dot_config/homebrew/Brewfile_common" . }}
+{{ if eq .chezmoi.os "darwin" }}
+{{ includeTemplate "dot_config/homebrew/Brewfile_darwin" . }}
+{{ else if eq .chezmoi.os "linux" }}
+{{ includeTemplate "dot_config/homebrew/Brewfile_linux" . }}
+{{ end }}

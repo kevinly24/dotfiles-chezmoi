@@ -1,0 +1,5 @@
+# Casks
+cask "neovide"
+cask "aerospace"
+cask "ghostty"
+cask "kitty"

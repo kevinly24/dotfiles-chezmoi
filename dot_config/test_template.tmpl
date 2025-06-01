@@ -1,0 +1,15 @@
+This is a test template.
+OS: {{ .chezmoi.os }}
+Work Machine: {{ .work_machine }}
+
+{{ if eq .chezmoi.os "darwin" }}
+This is macOS specific content.
+{{ else if eq .chezmoi.os "linux" }}
+This is Linux specific content.
+{{ end }}
+
+{{ if .work_machine }}
+This is work machine specific content.
+{{ else }}
+This is personal machine specific content.
+{{ end }}

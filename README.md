@@ -19,32 +19,6 @@ Templates use chezmoi's templating system to conditionally include content based
 - `.chezmoi.os` - Operating system ("darwin" or "linux")
 - `.work_machine` - Boolean indicating if this is a work machine
 
-## Scripts
-
-### Template Testing
-
-The repository includes a script to test templates across different environments:
-
-```bash
-./test_templates.sh
-```
-
-This script:
-1. Finds all template files (*.tmpl) in the repository
-2. Renders each template for four different environment combinations:
-   - darwin_personal (macOS, personal machine)
-   - darwin_work (macOS, work machine)
-   - linux_personal (Linux, personal machine)
-   - linux_work (Linux, work machine)
-3. Saves the rendered output to the `output/` directory, preserving the original directory structure
-4. Reports success or failure for each rendering
-
-To test specific templates only:
-
-```bash
-./test_templates.sh path/to/template1.tmpl path/to/template2.tmpl
-```
-
 ## Usage
 
 To apply these dotfiles to a new machine:

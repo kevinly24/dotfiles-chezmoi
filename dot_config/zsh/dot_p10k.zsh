@@ -50,6 +50,7 @@
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
+    my_ssh_status
     os_icon                 # os identifier
     dir                     # current directory
     vcs                     # git status
@@ -1676,6 +1677,25 @@
     p10k segment -f 208 -i '⭐' -t 'hello, %n'
   }
 
+  function prompt_my_ssh_status() {
+    if [ -n "$SSH_CONNECTION" ] || [ -n "$SSH_CLIENT" ]; then
+      # Try to get pretty hostname
+      local hostname
+      local pretty_hostname
+
+      pretty_hostname=$(hostnamectl --pretty 2>/dev/null)
+      # If pretty hostname is empty or just whitespace, try static hostname
+      if [ -z "${pretty_hostname// /}" ]; then
+        hostname=$(hostnamectl --static 2>/dev/null || hostname)
+      else
+        hostname="$pretty_hostname"
+      fi
+
+      p10k segment -i '󰣀' -t "$hostname" -f green
+    else
+      p10k segment -i '' -t 'HOME'
+    fi
+  }
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job
   # is to generate the prompt segment for display in instant prompt. See
   # https://github.com/romkatv/powerlevel10k#instant-prompt.

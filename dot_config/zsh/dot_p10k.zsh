@@ -1693,7 +1693,7 @@
 
       p10k segment -i '󰣀' -t "$hostname" -f green
     else
-      p10k segment -i '' -t 'HOME'
+      p10k segment -i '' -t ''
     fi
   }
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job

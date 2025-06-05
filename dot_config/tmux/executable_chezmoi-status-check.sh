@@ -3,8 +3,9 @@
 # chezmoi-status-check.sh
 # Script to check:
 # 1. Number of files with differences in chezmoi
-# 2. Number of unpulled commits in the chezmoi repository
-# 3. Number of unpushed commits in the chezmoi repository
+# 2. Number of uncommitted changes in the chezmoi repository
+# 3. Number of unpulled commits in the chezmoi repository
+# 4. Number of unpushed commits in the chezmoi repository
 
 # ANSI color codes
 GREEN='\033[0;32m'
@@ -18,6 +19,23 @@ NC='\033[0m' # No Color
 get_diff_count() {
   local diff_count=$(chezmoi status | grep -v "^= " | wc -l | tr -d ' ')
   echo "$diff_count"
+}
+
+# Function to get the count of uncommitted changes
+get_uncommitted_count() {
+  # Save current directory
+  local current_dir=$(pwd)
+  
+  # Change to chezmoi source directory
+  cd "$(chezmoi source-path)" || exit 1
+  
+  # Count uncommitted changes (modified, added, deleted files)
+  local uncommitted_count=$(git status --porcelain | wc -l | tr -d ' ')
+  
+  # Return to original directory
+  cd "$current_dir" || exit 1
+  
+  echo "$uncommitted_count"
 }
 
 # Function to get the count of unpulled commits
@@ -69,13 +87,18 @@ get_unpushed_count() {
 
 # Get counts
 diff_count=$(get_diff_count)
+uncommitted_count=$(get_uncommitted_count)
 unpulled_count=$(get_unpulled_count)
 unpushed_count=$(get_unpushed_count)
 
 # Create a simple output format for use in tmux status bar
 output=""
 if [ "$diff_count" -ne 0 ]; then
-  output+=" ${diff_count} "
+  output+=" ${diff_count} "
+fi
+
+if [ "$uncommitted_count" -ne 0 ]; then
+  output+=" ${uncommitted_count} "
 fi
 
 if [ "$unpulled_count" -ne 0 ]; then

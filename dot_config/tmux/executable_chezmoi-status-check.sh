@@ -4,6 +4,7 @@
 # Script to check:
 # 1. Number of files with differences in chezmoi
 # 2. Number of unpulled commits in the chezmoi repository
+# 3. Number of unpushed commits in the chezmoi repository
 
 # ANSI color codes
 GREEN='\033[0;32m'
@@ -44,29 +45,48 @@ get_unpulled_count() {
   echo "$unpulled_count"
 }
 
+# Function to get the count of commits to push
+get_unpushed_count() {
+  # Save current directory
+  local current_dir=$(pwd)
+  
+  # Change to chezmoi source directory
+  cd "$(chezmoi source-path)" || exit 1
+  
+  # Count unpushed commits
+  local unpushed_count=$(git rev-list --count @{upstream}..HEAD 2>/dev/null)
+  
+  # If the command failed (e.g., no upstream), set count to 0
+  if [ $? -ne 0 ]; then
+    unpushed_count=0
+  fi
+  
+  # Return to original directory
+  cd "$current_dir" || exit 1
+  
+  echo "$unpushed_count"
+}
+
 # Get counts
 diff_count=$(get_diff_count)
 unpulled_count=$(get_unpulled_count)
-
-# Display results
-# echo -e "${BLUE}${BOLD}=== Chezmoi Status Summary ===${NC}"
-# echo -e "${YELLOW}Files with differences:${NC} $diff_count"
-# echo -e "${YELLOW}Unpulled commits:${NC} $unpulled_count"
+unpushed_count=$(get_unpushed_count)
 
 # Create a simple output format for use in tmux status bar
-#echo -e "\n${BLUE}${BOLD}=== For tmux status bar ===${NC}"
-
-# Only show sections that have non-zero values
 output=""
 if [ "$diff_count" -ne 0 ]; then
-  output+=" ${diff_count}"
+  output+=" ${diff_count}"
 fi
 
 if [ "$unpulled_count" -ne 0 ]; then
-  output+="󰓂 ${unpulled_count}"
+  output+="󰅀 ${unpulled_count}"
+fi
+
+if [ "$unpushed_count" -ne 0 ]; then
+  output+="󰅃 ${unpushed_count}"
 fi
 
 # Only echo if there's something to show
 if [ -n "$output" ]; then
-  echo -e "$output"
+  echo -e "$output #[fg=#{@thm_overlay_0}]·"
 fi

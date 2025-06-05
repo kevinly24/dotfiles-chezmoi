@@ -1691,7 +1691,7 @@
         hostname="$pretty_hostname"
       fi
 
-      p10k segment -i '󰣀' -t "$hostname" -f green
+      p10k segment -i '' -t "$hostname" -f green
     else
       p10k segment -i '' -t ''
     fi

@@ -1,5 +1,5 @@
 [chezmoi]
 os = "darwin"
-
 [data]
+os = "darwin"
 work_machine = true 

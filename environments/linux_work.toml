@@ -1,4 +1,5 @@
 [chezmoi]
 os = "linux"
 [data]
+os = "linux"
 work_machine = true 

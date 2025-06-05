@@ -1,2 +1,4 @@
 environments
-output
+tmpl_results
+process_templates.sh
+README.md

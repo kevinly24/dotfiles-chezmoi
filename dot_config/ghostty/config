@@ -29,8 +29,6 @@ font-feature = zero 1  # Slashed zero
 font-family = Symbols Nerd Font
 
 ### Needed for commit mono
-# adjust-cell-height = 3
-# adjust-cursor-height = 3
+# adjust-cell-height = 1
+# adjust-cursor-height = 1
 adjust-underline-position = 4
-
-

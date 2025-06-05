@@ -75,18 +75,18 @@ unpushed_count=$(get_unpushed_count)
 # Create a simple output format for use in tmux status bar
 output=""
 if [ "$diff_count" -ne 0 ]; then
-  output+=" ${diff_count}"
+  output+=" ${diff_count} "
 fi
 
 if [ "$unpulled_count" -ne 0 ]; then
-  output+="󰅀 ${unpulled_count}"
+  output+="󰅀${unpulled_count} "
 fi
 
 if [ "$unpushed_count" -ne 0 ]; then
-  output+="󰅃 ${unpushed_count}"
+  output+="󰅃${unpushed_count} "
 fi
 
 # Only echo if there's something to show
 if [ -n "$output" ]; then
-  echo -e "$output #[fg=#{@thm_overlay_0}]·"
+  echo -e " $output#[fg=#{@thm_overlay_0}]·"
 fi

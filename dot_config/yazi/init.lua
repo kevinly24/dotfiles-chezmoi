@@ -13,3 +13,12 @@ require("bunny"):setup({
 	notify = false, -- Notify after hopping, default is false
 	fuzzy_cmd = "fzf", -- Fuzzy searching command, default is "fzf"
 })
+
+Status:children_add(function(self)
+	local h = self._current.hovered
+	if h and h.link_to then
+		return " -> " .. tostring(h.link_to)
+	else
+		return ""
+	end
+end, 3300, Status.LEFT)

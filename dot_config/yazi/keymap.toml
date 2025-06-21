@@ -18,3 +18,6 @@
     desc = "Start bunny.yazi"
     on = ";"
     run = "plugin bunny"
+[[mgr.prepend_keymap]]
+    on = "<C-p>"
+    run = 'shell -- qlmanage -p "$@"'

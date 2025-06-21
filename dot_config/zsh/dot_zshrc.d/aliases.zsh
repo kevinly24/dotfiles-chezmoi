@@ -41,3 +41,4 @@ alias zbench='for i in {1..10}; do /usr/bin/time zsh -lic exit; done'
 alias zdot='cd ${ZDOTDIR:-~}'
 
 alias -- 'lg'='lazygit'
+alias cat='bat'

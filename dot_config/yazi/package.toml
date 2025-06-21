@@ -13,5 +13,7 @@ use = "stelcodes/bunny"
 rev = "ea27f37"
 hash = "7956295208401cdbdf2b673b73437edd"
 
-[flavor]
-deps = []
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-mocha"
+rev = "d04a298"
+hash = "288a0dedd5d13b28605cf82c05326dcd"

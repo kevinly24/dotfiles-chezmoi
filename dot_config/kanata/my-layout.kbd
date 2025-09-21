@@ -1,5 +1,8 @@
 (defcfg
   process-unmapped-keys no
+  macos-dev-names-include (
+    "Apple Internal Keyboard / Trackpad"
+  )
 )
 
 (defsrc
@@ -18,7 +21,7 @@
   esc  brdn brup f3   f4   f5   f6   ◀◀   ▶⏸   ▶▶   mute vold volu
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  @␛⌃  a    s    @l⌥  f    g    h    j    @r⌥  l    ;    '    ret
+  @␛⌃  a    @s⌃  @d⌥  @f⌘  g    h    @j⌘  @k⌥  @l⌃  ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   @␛⌃  lmet lalt           spc            ralt @r⌘  rctl
 )
@@ -34,8 +37,12 @@
 
 (defalias
   r⌘ (tap-hold-press 200 200 ralt (layer-toggle right_cmd_layer))
-  l⌥ (tap-hold 200 200 d lalt)
-  r⌥ (tap-hold 200 200 k ralt)
+  s⌃ (tap-hold 200 200 s lctrl)
+  d⌥ (tap-hold 200 200 d lalt)
+  f⌘ (tap-hold 200 200 f lmet)
+  j⌘ (tap-hold 200 200 j rmet)
+  k⌥ (tap-hold 200 200 k ralt)
+  l⌃ (tap-hold 200 200 l rctrl)
   ␛⌃ (tap-hold-press 200 200 esc lctl)
 )
 

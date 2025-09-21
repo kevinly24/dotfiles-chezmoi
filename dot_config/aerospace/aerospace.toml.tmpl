@@ -93,14 +93,15 @@ alt-tab = 'workspace-back-and-forth'
 alt-leftSquareBracket = 'move-node-to-workspace --focus-follows-window prev'
 alt-rightSquareBracket = 'move-node-to-workspace --focus-follows-window next'
 alt-quote = 'mode root'
-alt-enter = 'exec-and-forget wezterm start'
-alt-shift-enter = ['split opposite', 'exec-and-forget wezterm start']
-alt-semicolon = 'exec-and-forget open -a Firefox {{ if .work_machine }}https://code.amazon.com/{{ else }}about:newtab{{ end }}'
+alt-enter = 'exec-and-forget open -n /Applications/Ghostty.app/'
+alt-shift-enter = ['split opposite', 'exec-and-forget open -n /Applications/Ghostty.app/']
+alt-semicolon = 'exec-and-forget open -na /Applications/Firefox.app https://code.amazon.com/'
 alt-esc = 'close'
 
 [mode.root.binding]
 m = 'mode move'
 w = 'mode workspace'
+a = 'mode applications'
 
 esc = ['reload-config', 'mode main']
 q = ['close', 'mode main']
@@ -305,6 +306,12 @@ shift-h = ['move-workspace-to-monitor left', 'mode main']
 shift-j = ['move-workspace-to-monitor down', 'mode main']
 shift-k = ['move-workspace-to-monitor up', 'mode main']
 shift-l = ['move-workspace-to-monitor right', 'mode main']
+
+
+[mode.applications.binding]
+s = ['exec-and-forget open -a Slack', 'mode main']
+o = ['exec-and-forget open -a "Microsoft Outlook"', 'mode main']
+
 
 [[on-window-detected]]
     if.app-id = 'md.obsidian'
